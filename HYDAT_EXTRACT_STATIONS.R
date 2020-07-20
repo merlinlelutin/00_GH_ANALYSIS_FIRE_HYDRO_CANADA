@@ -17,7 +17,12 @@
   library(sf)
 
 # Working directory ----------------
-  setwd("D:/PROJECTS/21_2018_CANADA_INVENTORY-HYDRO-FIRE-DATA_ACTIVE")
+  setwd("D:/PROJECTS/21_2018_CANADA_INVENTORY-HYDRO-FIRE-DATA_ACTIVE") # For user to change as necessary
+
+
+# Load data -------------------------------------------------------------
+  wcs <- st_read("02_TRANSFORMED_DATA/NRCAN/WSC_Watersheds_2015.shp")
+
   
 # Extract HYDAT gauges ---------------
 # This part extracts the location (LAT,LON) of gauges active in 1980
@@ -33,6 +38,7 @@
     geom_sf(data = stns_1980_list) # Plot point layer showing stations in 1980
   st_write(stns_1980_list, "02_TRANSFORMED_DATA/HYDAT/stns_1980_location.shp", append = F) # Write point shapefile
   
+# This part extracts the location (LAT,LON) of gauges active between 1981 and 2019
 # This part extracts the location (LAT,LON) of gauges active between 1981 and 2019
   stns_1981_2019_list <- hy_annual_stats(start_year = 1981, end_year = 2019) %>%
     select(STATION_NUMBER, Parameter, Year) %>%
