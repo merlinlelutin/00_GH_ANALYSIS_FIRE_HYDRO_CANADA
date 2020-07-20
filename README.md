@@ -1,4 +1,4 @@
-# 00_GH_ANALYSIS_FIRE_HYDRO_CANADA
+# ANALYSIS_FIRE_HYDRO_CANADA
 Codes and data for wildfire-hydrological data analysis in Canada. 
 Project initiated as part of my involvement in Global Water Futures.
 
