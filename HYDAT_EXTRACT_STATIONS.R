@@ -19,11 +19,10 @@
 # Working directory ----------------
   setwd("D:/PROJECTS/21_2018_CANADA_INVENTORY-HYDRO-FIRE-DATA_ACTIVE") # For user to change as necessary
 
-
 # Load data -------------------------------------------------------------
   wcs <- st_read("02_TRANSFORMED_DATA/NRCAN/WSC_Watersheds_2015.shp")
+  nfdb <- st_read("01_RAW_DATA/CWFIS/NFDB_poly_20190607.shp")
 
-  
 # Extract HYDAT gauges ---------------
 # This part extracts the location (LAT,LON) of gauges active in 1980
   stns_1980_list <- hy_annual_stats(start_year = 1980, end_year = 1980) %>%
